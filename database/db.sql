@@ -1,0 +1,10 @@
+CREATE TABLE personal (
+  `personal_id` INTEGER UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(100) NOT NULL UNIQUE,
+  `active` TINYINT(1) NOT NULL DEFAULT 1
+);
+
+ALTER TABLE personal 
+ADD COLUMN 
+  `password` VARCHAR(60) NOT NULL AFTER `email`; 

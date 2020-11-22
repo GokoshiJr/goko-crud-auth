@@ -4,7 +4,8 @@
   "description": "Ejemplo de CRUD mysql con autenticacion y proteccion de rutas",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "npx nodemon src/index.js",
+    "clean": "npx prettier --write src/"
   },
   "keywords": [],
   "author": "Julio Gonzalez <julioagonzalez18@gmail.com>",
@@ -25,6 +26,7 @@
     "timeago.js": "^4.0.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.0"
   }
 }
