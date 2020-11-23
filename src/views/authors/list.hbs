@@ -1,0 +1,30 @@
+<div class="container p-4">
+  <div class="row mt-5">
+    <div class="col-md-6 offset-3">
+      <table class="table table-bordered table-hover">
+        <thead class="text-center">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Nationality</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody class="text-center">
+          {{#each autores}}
+          <tr>
+            <td>{{author_id}}</td>
+            <td id="nombre">{{name}}</td>
+            <td>{{nacionality}}</td>
+            <td>
+              <a href="delete/{{ author_id }}" class="btn btn-danger">Delete</a>
+              <a href="edit/{{ author_id }}" class="btn btn-primary">Edit</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <a href="add/">Agregar</a>
+    </div>
+  </div>
+</div>
