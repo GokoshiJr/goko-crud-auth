@@ -8,15 +8,10 @@ const { database } = require("./keys");
 const pool = mysql.createPool(database);
 pool.getConnection((err, conexi) => {
   if (err) {
-    if (err.code === "PROTOCOL_CONNECTION_LOST") {
-      console.error("Se perdio la conexión con la bd");
-    }
-    if (err.code === "ERR_CON_COUNT_ERROR") {
-      console.error("La bd tiene alguna conexión");
-    }
-    if (err.code === "DATABASE_CONNECTION_WAS_REFUSE") {
-      console.error("Conexión rechazada");
-    }
+    console.log(global.linea);
+    console.log(` Error to Connect MySql \n Code: ${err.code} \n Errno: ${err.errno} \n SqlMessage: ${err.sqlMessage} \n Sql State: ${err.sqlState}`);
+    console.log(global.linea);
+    console.log(" Please Check the Connection");
   }
   if (conexi) {
     conexi.release(); // lanza la conexion
@@ -26,9 +21,9 @@ pool.getConnection((err, conexi) => {
       name: conexi.config.database,
     };
     console.log(
-      `-DB Name: ${db_info.name} \n-DB Host: ${db_info.host} \n-DB Port: ${db_info.port}`
+      ` Mysql Conection Succesfully \n DB Name: ${db_info.name} \n DB Host: ${db_info.host} \n DB Port: ${db_info.port}`
     );
-    console.log(`----- Listen -----`);
+    console.log(global.linea);
   }
   return;
 }); // lo llamamos aqui para no iniciarla cuando hagamos querys

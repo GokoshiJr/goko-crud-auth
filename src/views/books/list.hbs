@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row mt-4">
+    {{#each books}}
+    <div class="card m-2">
+      <div class="card-header">
+        Año de publicación {{year}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{description}}.</p>
+
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</div>

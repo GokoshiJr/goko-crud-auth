@@ -4,10 +4,6 @@ const morgan = require("morgan"); // middleware
 const { urlencoded } = require("express"); // para recibir los datos del form html
 const exhbs = require("express-handlebars");
 
-// para la conexion con la bd
-const mysql = require("mysql");
-const mysqlConnection = require("express-myconnection");
-
 // initializations
 const app = express();
 
@@ -18,7 +14,7 @@ app.set("views", path.join(__dirname, "views"));
 app.engine(
   ".hbs",
   exhbs({
-    defualtLayout: "main", // partes comunes de la navegacion
+    defaultLayout: "main", // partes comunes de la navegacion
     layoutsDir: path.join(app.get("views"), "layouts"), // indicar donde estan los layouts
     partialsDir: path.join(app.get("views"), "partials"), // indicar donde estan los partials
     extname: ".hbs", // especificar la extension mas resumida, en lugar de .handlebars
@@ -36,6 +32,7 @@ app.use(urlencoded({ extended: false }));
 app.use(express.json());
 
 // global variables
+global.linea = "-------------------------"
 app.use((req, res, next) => {
   // middleware
   /*
@@ -50,8 +47,10 @@ app.use((req, res, next) => {
 const indexRoute = require("./routes/index");
 const authenticationRoute = require("./routes/authentication");
 const authorsRoute = require("./routes/authors");
+const booksRoute = require("./routes/books")
 app.use("/", indexRoute);
 app.use("/authors", authorsRoute);
+app.use("/books", booksRoute);
 app.use("/auth", authenticationRoute);
 
 // public
@@ -59,5 +58,6 @@ app.use("/public", express.static(path.join(__dirname, "public")));
 
 // starting the server
 app.listen(app.get("port"), () => {
-  console.log(`--- Server on port ${app.get("port")} ---`);
+  console.log(global.linea);
+  console.log(` Server on port ${app.get("port")}`);
 });
