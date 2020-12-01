@@ -8,7 +8,7 @@ router.get("", async (req, res) => { // ruta authors/¡
 });
 
 router.get("/home", async (req, res) => { // ruta authors/
-  let pagSize = 5; // tamaño de registros para mostrar
+  let pagSize = 10; // tamaño de registros para mostrar
   let pag = 1; // pagina donde nos encontramos
   let empezarDesde = (pag - 1) * pagSize;
   const filas = await pool.query("SELECT COUNT(*) as numFilas FROM authors");
@@ -21,7 +21,7 @@ router.get("/home", async (req, res) => { // ruta authors/
 });
 
 router.get("/pag=:pag", async (req, res) => { // ruta authors/
-  let pagSize = 5; // tamaño de registros para mostrar
+  let pagSize = 10; // tamaño de registros para mostrar
   let { pag } = req.params;
   let empezarDesde = (pag - 1) * pagSize;
   const filas = await pool.query("SELECT COUNT(*) as numFilas FROM authors");

@@ -1,0 +1,74 @@
+body {
+  background-color: #f9f7f7;
+}
+
+.sombra1 {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.colorNavigation {
+  background-color: #112d4e;
+  color: #fff;
+}
+
+.colorTitleTable {
+  background-color: #dbe2ef;
+  color: #000000;
+}
+
+.vertical a {
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  float: left;
+  color: #fff;
+  background-color: #3f72af;
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  font-size: 26px;
+}
+
+.vertical a:hover,
+.vertical a:active {
+  background-color: #112d4e;
+  color: #fff;
+  text-decoration: none;
+}
+
+.no-style {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container nav {
+  height: 80px;
+  width: 100%;
+  grid-area: nav;
+}
+
+.container .table1 {
+  /* 
+  height: 100%;
+  width: 100%; 
+  */
+  grid-area: table1;
+}
+
+.container .side1 {
+  grid-area: side1;
+}
+
+.container {
+  min-width: 1080px; /* ancho minimo */
+  margin: 10px auto; /* auto para centrar la pag*/
+  display: grid; /* display grid para empezar a trabajar con css grid*/
+  grid-gap: 10px; /* espaciado de 10px entre cada uno de los elementos del container*/
+  grid-template-columns: repeat(4, 1fr); /* 4 col, ancho 1 fr*/
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: /* especificar un area */
+    'nav    nav     nav     nav'
+    'side1   table1   table1    table1'
+    'side1   table1   table1    table1';
+}
