@@ -1,33 +1,35 @@
-<div class="vertical no-style side1">
-  <a class="sombra1" href="/Profile">Perfil</a>
-  <a class="sombra1" href="add">Agregar</a>
-  <a class="sombra1" href="">Editar</a>
-  <a class="sombra1" href="">Eliminar</a>
-</div>
+<div class="author-list">
+  <div class="vertical no-style side1">
+    <a class="sombra1" href="/profile">Perfil</a>
+    <a class="sombra1" href="add">Agregar</a>
+    <a class="sombra1" href="">Editar</a>
+    <a class="sombra1" href="">Eliminar</a>
+  </div>
 
-<div class="table1">
-  <table class="sombra1 table table-bordered table-hover">
-    <h4 class="sombra1 p-2 text-center colorTitleTable">Tabla Autores</h4>
-    <thead class="text-center" style="font-size: 20px;">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Nationality</th>
-      </tr>
-    </thead>
-    <tbody class="text-center" style="font-size: 18px;">
-      {{#each autores}}
-      <tr>
-        <td>{{author_id}}</td>
-        <td id="nombre">{{name}}</td>
-        <td>{{nacionality}}</td>
-      </tr>
+  <div class="table1">
+    <table class="sombra1 table table-bordered table-hover">
+      <h4 class="sombra1 p-2 text-center colorTitleTable">Tabla Autores</h4>
+      <thead class="text-center" style="font-size: 20px;">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Nationality</th>
+        </tr>
+      </thead>
+      <tbody class="text-center" style="font-size: 18px;">
+        {{#each autores}}
+        <tr>
+          <td>{{author_id}}</td>
+          <td id="nombre">{{name}}</td>
+          <td>{{nacionality}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <div class="row" style="margin: auto;">
+      {{#each arrayPag}}
+      <a class="btn btn-dark m-1" href="pag={{this}}">{{ this }}</a>
       {{/each}}
-    </tbody>
-  </table>
-  <div class="row" style="margin: auto;">
-    {{#each arrayPag}}
-    <a class="btn btn-dark m-1" href="pag={{this}}">{{ this }}</a>
-    {{/each}}
+    </div>
   </div>
 </div>

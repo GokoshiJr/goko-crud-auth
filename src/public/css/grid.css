@@ -42,33 +42,99 @@ body {
   padding: 0;
 }
 
+/* .container nav {
+  border-radius: 4px; 
+  height: 80px;
+  width: 100%;
+  grid-area: nav;
+} */
+
+.container .body .table1 {
+  /* 
+  height: 100%;
+  width: 100%; 
+  */
+  border-radius: 4px;
+  grid-area: table1;
+}
+
+.container .body .side1 {
+  
+  border-radius: 4px; 
+  grid-area: side1;
+}
+
+/* .container {
+  min-width: 1080px; 
+  margin: 10px auto; 
+  display: grid; 
+  grid-gap: 10px; 
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: 
+    'nav    nav     nav     nav '
+    'side1  table1  table1  table1'
+    'side1  table1  table1  table1';
+} */
+
 .container nav {
+  border-radius: 4px; 
   height: 80px;
   width: 100%;
   grid-area: nav;
 }
 
-.container .table1 {
-  /* 
-  height: 100%;
-  width: 100%; 
-  */
-  grid-area: table1;
+.container .body {
+  grid-area: body;
 }
 
-.container .side1 {
-  grid-area: side1;
+.container .footer {
+  /* border: 2px solid #000000; */
+  border-radius: 4px;
+  color: #fff;
+  background-color: #3f71afd3;
+  padding: 10px;
+  text-align: center;
+  grid-area: footer;
 }
 
 .container {
-  min-width: 1080px; /* ancho minimo */
-  margin: 10px auto; /* auto para centrar la pag*/
-  display: grid; /* display grid para empezar a trabajar con css grid*/
-  grid-gap: 10px; /* espaciado de 10px entre cada uno de los elementos del container*/
-  grid-template-columns: repeat(4, 1fr); /* 4 col, ancho 1 fr*/
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas: /* especificar un area */
-    'nav    nav     nav     nav'
-    'side1   table1   table1    table1'
-    'side1   table1   table1    table1';
+  min-width: 1080px; 
+  margin: 10px auto; 
+  display: grid; 
+  grid-gap: 10px;  
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: 
+    'nav    nav     nav     nav '
+    'body   body    body    body'
+    'footer footer footer footer';
+}
+
+.container .body .author-list {
+  /* margin-top: 10px; */
+  display: grid;
+  grid-gap: 10px; 
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(1, auto);
+  grid-template-areas: 
+    'side1 table1 table1 table1';
+}
+
+.container .body .add1 {
+  grid-area: add1;
+}
+
+.container .body .add2 {
+  grid-area: add2;
+}
+
+.container .body .author-add {
+  display: grid;
+  grid-gap: 10px; 
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(1, auto);
+  grid-template-areas: 
+    'add1 add1 add2 add2';
+  
 }
